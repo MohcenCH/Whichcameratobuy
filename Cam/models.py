@@ -5,7 +5,7 @@ class Product(models.Model):
     Name = models.CharField(max_length=700, null=True)
     Price = models.FloatField(null=True)
     Link = models.URLField(max_length=2000, null=True)
-    Image = models.ImageField(null=True)
+    Image = models.ImageField(upload_to = 'product-img/', null=True)
     Continuous_shooting = models.FloatField(null=True)
     Screen_size = models.FloatField(null=True)
     Focus_type = models.CharField(max_length=700, null=True)
@@ -17,7 +17,6 @@ class Product(models.Model):
 		
     def __str__(self):
         return self.Name
-
 
 
 
