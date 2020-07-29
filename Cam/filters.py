@@ -1,9 +1,9 @@
-import django_filters
-from django_filters import CharFilter , NumberFilter
+#import django_filters
+#from django_filters import CharFilter , NumberFilter
 
-from .models import *
+#from .models import *
 
-class ProductFilter(django_filters.FilterSet):
+#class ProductFilter(django_filters.FilterSet):
     
     
 

@@ -7,10 +7,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Adding my css file & bootstrap -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
-  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- Adding my css file & bootstrap/jquery -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="{% static '/css/main.css' %}">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/poer.js/1.14.7/umd/poer.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 
   
@@ -22,6 +25,13 @@
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 </head>
+<script>
+  /*
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();
+});
+*/
+</script>
 <style>
 #logo {
     height: 42px;
@@ -33,11 +43,24 @@ body {
   width: 80px;
   height: auto;
 } 
-.container {
-  padding-top: 150px;
-
+.pp {
+  padding-left: 45px !important;
 }
-
+.other-pp {
+  padding-left: 13px !important;
+}
+.another-pp {
+  padding-left: 26px !important;
+}
+.form {
+  padding-top: 150px;
+}
+.another1-pp {
+  padding-left: px !important;
+}
+td {
+  font-size: small;
+}
 </style>
 
 <body>
@@ -46,50 +69,46 @@ body {
      </div>
   </nav>
 
-  <div class="container ">
+  <div class="form container-fluid ">
          
     <table class="table table-hover">
       <thead>
         <tr class="row">
-          <th class="col-md-1" >Name</th>
-          <th class="col " >Picture</th>
-          <th class="col-md-1" >Max resolution</th>
-          <th class="col-md-1" >Video resolution</th>
-          <th class="col-md-1" >Screen size</th>
-          <th class="col-md-1" >Style</th>    
-          <th class="col-md-1" >Continuous shooting speed</th>
-          <th class="col-md-1" >Optical zoom</th>
-          <th class="col-md-1" >Focus type</th>
-          <th class="col-md-1" >Wireless communication technology</th>
-          <th class="col-md-1" >Price</th>
-          <th class="col-md-1" >Purchase</th>
+          <th class="col another-pp" >Name</th>
+          <th class="col another-pp" >Picture</th>
+          <th class="col another-pp" >Max resolution</th>
+          <th class="col another-pp" >Video resolution</th>
+          <th class="col another-pp" >Style</th>    
+          <th class="col another-pp" >Continuous shooting speed</th>
+          <th class="col another-pp" >Focus type</th>
+          <th class="col another-pp" >Wireless communication </th> 
+          <th class="col another-pp" >Price</th>
+          <th class="col-sm-2 col-lg-2 col-md-2 pp" >Purchase</th>
         </tr>
       </thead> 
       <tbody>
-        {% for product in products %}
+        {% for product in products %} 
+
       </hr>
        
-        <tr class="row">
-          <td class="col-md-1"> {{product.Name}} </td>
-          <td class="col-md-1"><img id="IMG" src="{{ product.Image.url }}" alt="product image" ></td> 
-          <td class="col-md-1"> {{product.Max_resolution}} </td>
-          <td class="col-md-1"> {{product.Video_resolution}} </td>
-          <td class="col-md-1"> {{product.Screen_size}} </td>
-          <td class="col-md-1"> {{product.Style}} </td>
-          <td class="col-md-1"> {{product.Continuous_shooting}} </td>
-          <td class="col-md-1"> {{product.Optical_zoom}} </td>
-          <td class="col-md-1"> {{product.Focus_type}} </td>
-          <td class="col-md-1"> {{product.Wireless_communication_technology}} </td>
-          <td class="col-md-1"> {{product.Price}} </td>
-          <th class="col-md-1"> <a href="{{product.Link}}">Buy now</a> </th>
+        <tr class="row" >
+          <td class="col other-pp "> {{product.Name}} </td>
+          <td class="col other-pp "><img id="IMG" src="{{ product.Image_Link }}" alt="product image" ></td> 
+          <td class="col other-pp "> {{product.Max_resolution}} </td>
+          <td class="col other-pp "> {{product.Video_resolution}} </td>
+          <td class="col other-pp "> {{product.Style}} </td>
+          <td class="col other-pp "> {{product.Continuous_shooting}} </td>
+          <td class="col other-pp "> {{product.Focus_type}} </td>
+          <td class="col other-pp "> {{product.Wireless_communication_technology}} </td> 
+          <td class="col another-pp ">	&nbsp; &nbsp; &nbsp;{{product.Price}}$ </td>
+   <span class="" > <th class="col-sm-2 col-lg-2 col-md-2 pp"> <a class="btn btn-success" href="{{product.Link}}">Buy now</a> </th> </span> 
         </tr>
         {% endfor %}
-
 
       </tbody>
     </table>
   </div>
-  
+
 
 
 </body>

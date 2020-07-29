@@ -5,9 +5,9 @@ from .models import *
 
 
 def home(request):
-    
+
     Products = Product.objects.all()
 
-
-    context = {'products':Products}
+    context = {"products":Products}
     return render(request, 'Cam/main.html', context)
+
